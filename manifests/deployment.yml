@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: pipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: pipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: pipelinesjavascriptdocker 
+          image: acrdemoken.azurecr.io/pipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
